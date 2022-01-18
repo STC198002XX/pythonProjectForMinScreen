@@ -2,6 +2,8 @@ import pyautogui
 import time
 import alarm
 
+print("程式將於5秒後開始偵測，請勿讓本視窗擋住要偵測的畫面")
+time.sleep(5)
 number = len(list(pyautogui.locateAllOnScreen(r'for_quene/quene.PNG')))
 print(f'偵測到{number}個人物排隊中')
 
