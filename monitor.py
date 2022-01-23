@@ -5,6 +5,7 @@ import pyautogui
 import pyscreenshot as ImageGrab
 import cv2
 import time
+import time_recorded
 
 def check():
     # 對螢幕截圖
@@ -33,7 +34,7 @@ def check():
         cv2.rectangle(img1, (i[0], i[1]), (i[0]+i[2]+50, i[1]+i[3]), (0, 255, 0), 2)
     # 下面這行只是確認有資料
     # print(locationRecord)
-    print(f'共有{deviceNumber}個角色正常偵測中')
+    print(f'偵測到{deviceNumber}個角色在遊戲中     '+time_recorded.time_message())
     # img1 = cv2.resize(img2, (0, 0), fx=0.75, fy=0.75)
     # cv2.imshow(f'{deviceNumber} characters detected', img1)
     # cv2.waitKey(0)
