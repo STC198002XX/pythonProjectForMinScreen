@@ -10,5 +10,5 @@ def send_message(a, n):
     aaa.chat.sendMsg(f"第{n}次連續警報:有{a}個人沒在賺錢     "+time_recorded.time_message())    # 送簡訊給這個聯絡人
 
 if __name__=="__main__":
-    send_message(100)
+    send_message(56789, 65535)
 
