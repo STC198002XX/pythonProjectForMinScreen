@@ -1,3 +1,6 @@
+#這個不用了，因為沒有重要到需要打電話
+#這個是去偵測skype上打電話的按鈕，然後去按他。
+#這個程式是讓別的函數呼叫的。
 import pyautogui
 import time
 import pydirectinput
