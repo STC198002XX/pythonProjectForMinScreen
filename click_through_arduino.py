@@ -1,6 +1,9 @@
 import pyfirmata
 import time
-board = pyfirmata.Arduino('COM6')
+with open(r"c:\data_for_python.txt", "rt", encoding="utf-8") as data:
+    txt = data.read().split()
+
+board = pyfirmata.Arduino(txt[1])
 print("Communication Successfully started")
 
 
