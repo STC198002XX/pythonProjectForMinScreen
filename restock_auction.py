@@ -21,21 +21,21 @@ def restock_the_good_function(x, y):
 
     relatvie_exit_auction = [95, 31]
     relative_quick_set = [-266, 179]
-    relative_auto_huntering = [-83, 166]
+    relative_auto_huntering = [-83, 131]
 
     # define buttons
-    unlock_loctaion = [a[0]+relative_unlock_loctaion[0]+random.randint(-2, 2), a[1]+relative_unlock_loctaion[1]+random.randint(-2, 2)]
+    unlock_loctaion = [a[0]+relative_unlock_loctaion[0]+random.randint(-50, 50), a[1]+relative_unlock_loctaion[1]+random.randint(-50, 50)]
     hamberger_button = [a[0]+relative_hamberger_button[0]+random.randint(-2, 2), a[1]+relative_hamberger_button[1]+random.randint(-2, 2)]
     auction_button = [a[0]+relatvie_auction_button[0]+random.randint(-2, 2), a[1]+relatvie_auction_button[1]+random.randint(-2, 2)]
-    sell_button = [a[0]+relatvie_sell_button[0]+random.randint(-2, 2), a[1]+relatvie_sell_button[1]+random.randint(-2, 2)]
-    restock_the_failed_good = [a[0]+relatvie_restock_the_failed_good[0]+random.randint(-2, 2),a[1]+relatvie_restock_the_failed_good[1]+random.randint(-2, 2)]
-    restock = [a[0]+relative_restock[0]+random.randint(-2, 2), a[1]+relative_restock[1]+random.randint(-2, 2)]
-    cancel_restock = [a[0]+relative_cancel_restock[0]+random.randint(-2, 2), a[1]+relative_cancel_restock[1]+random.randint(-2, 2)]
-    confirm = [a[0]+relative_confirm[0]+random.randint(-2, 2), a[1]+relative_confirm[1]+random.randint(-2, 2)]
+    sell_button = [a[0]+relatvie_sell_button[0]+random.randint(-10, 10), a[1]+relatvie_sell_button[1]+random.randint(-2, 2)]
+    restock_the_failed_good = [a[0]+relatvie_restock_the_failed_good[0]+random.randint(-10, 10),a[1]+relatvie_restock_the_failed_good[1]+random.randint(-2, 2)]
+    restock = [a[0]+relative_restock[0]+random.randint(-10, 10), a[1]+relative_restock[1]+random.randint(-2, 2)]
+    cancel_restock = [a[0]+relative_cancel_restock[0]+random.randint(-10, 10), a[1]+relative_cancel_restock[1]+random.randint(-2, 2)]
+    confirm = [a[0]+relative_confirm[0]+random.randint(-10, 10), a[1]+relative_confirm[1]+random.randint(-2, 2)]
 
     exit_auction = [a[0]+relatvie_exit_auction[0]+random.randint(-2, 2), a[1]+relatvie_exit_auction[1]+random.randint(-2, 2)]
     quick_set = [a[0]+relative_quick_set[0]+random.randint(-1, 3), a[1]+relative_quick_set[1]+random.randint(-2, 2)]
-    auto_huntering = [a[0]+relative_auto_huntering[0]+random.randint(-2, 2), a[1]+relative_auto_huntering[1]+random.randint(-2, 2)]
+    auto_huntering = [a[0]+relative_auto_huntering[0]+random.randint(-20, 20), a[1]+relative_auto_huntering[1]+random.randint(-20, 20)]
 
     def exit_the_control_of_simulator(): # 要離開模擬器的控制，pyautogui才能控制滑鼠座標
         print("執行離開模擬器的控制程序中")
