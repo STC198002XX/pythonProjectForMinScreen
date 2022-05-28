@@ -28,7 +28,7 @@ def drag_to_right():
     board.digital[7].write(1)
     time.sleep(0.5)
     board.digital[6].write(1)
-    time.sleep(0.1)
+    time.sleep(0.15)
     board.digital[6].write(0)
     board.digital[7].write(0)
     time.sleep(1)
