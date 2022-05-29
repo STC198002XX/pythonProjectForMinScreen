@@ -37,13 +37,27 @@ def restock_the_good_function(x, y):
     quick_set = [a[0]+relative_quick_set[0]+random.randint(-1, 3), a[1]+relative_quick_set[1]+random.randint(-2, 2)]
     auto_huntering = [a[0]+relative_auto_huntering[0]+random.randint(-20, 20), a[1]+relative_auto_huntering[1]+random.randint(-20, 20)]
 
+    # 下面被註解的是舊版的
+    # def exit_the_control_of_simulator(): # 要離開模擬器的控制，pyautogui才能控制滑鼠座標
+    #     print("執行離開模擬器的控制程序中")
+    #     present_location = pyautogui.position()
+    #     while present_location[0] < 1633: # 沒有到右邊沒模擬器的地方就不要按
+    #         click_through_arduino.move_to_right()
+    #         time.sleep(1)
+    #         present_location = pyautogui.position()
+    #     click_through_arduino.click()
+
     def exit_the_control_of_simulator(): # 要離開模擬器的控制，pyautogui才能控制滑鼠座標
         print("執行離開模擬器的控制程序中")
         present_location = pyautogui.position()
-        while present_location[0] < 1633: # 沒有到右邊沒模擬器的地方就不要按
+        time.sleep(1)
+        new_present_location = pyautogui.position()
+        while (present_location[0] < 1633) or (present_location[0] != new_present_location[0]) or (present_location[1] != new_present_location[1])  : # 沒有到右邊沒模擬器的地方就不要按
             click_through_arduino.move_to_right()
             time.sleep(1)
             present_location = pyautogui.position()
+            time.sleep(1.5)
+            new_present_location = pyautogui.position()
         click_through_arduino.click()
 
     print("正移動到要解鎖的位置")
