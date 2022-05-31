@@ -28,7 +28,7 @@ def drag_to_right():
     board.digital[7].write(1)
     time.sleep(0.5)
     board.digital[6].write(1)
-    time.sleep(0.3)
+    time.sleep(1)
     board.digital[6].write(0)
     board.digital[7].write(0)
     time.sleep(1)
@@ -36,12 +36,12 @@ def drag_to_right():
 
 def move_to_right():
     board.digital[6].write(1)
-    time.sleep(0.1)
+    time.sleep(1)
     board.digital[6].write(0)
     time.sleep(1)
 
 
 if __name__ == "__main__":
     time.sleep(1)
-    drag_to_right()
+    move_to_right()
 #    click()
