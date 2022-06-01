@@ -66,6 +66,15 @@ def restock_the_good_function(x, y):
     click_through_arduino.drag_to_right()
     exit_the_control_of_simulator()
 
+    while pyautogui.locateCenterOnScreen(r"for_arduino\home_scroll.png") == None:
+        print("沒有看到home_scroll，再等5秒鐘")
+        time.sleep(5)
+        print("正移動到要解鎖的位置")
+        pyautogui.moveTo(*unlock_loctaion, duration=1)
+        print("正要解鎖自動狩獵模式")
+        click_through_arduino.drag_to_right()
+        exit_the_control_of_simulator()
+
     # 按漢堡的按鈕
     print("執行按漢堡的程序")
     pyautogui.moveTo(*hamberger_button, duration=1)

@@ -9,7 +9,7 @@ print("Communication Successfully started")
 
 def click():
     board.digital[7].write(1)
-    time.sleep(0.1)
+    time.sleep(0.2)
     board.digital[7].write(0)
     time.sleep(1)
 
@@ -28,20 +28,20 @@ def drag_to_right():
     board.digital[7].write(1)
     time.sleep(0.5)
     board.digital[6].write(1)
-    time.sleep(1)
+    time.sleep(0.1)
     board.digital[6].write(0)
+    time.sleep(1)
     board.digital[7].write(0)
     time.sleep(1)
 
 
 def move_to_right():
     board.digital[6].write(1)
-    time.sleep(1)
+    time.sleep(0.1)
     board.digital[6].write(0)
     time.sleep(1)
 
 
 if __name__ == "__main__":
-    time.sleep(1)
-    move_to_right()
+    drag_to_right()
 #    click()

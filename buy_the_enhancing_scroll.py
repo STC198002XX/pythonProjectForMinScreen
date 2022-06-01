@@ -71,6 +71,11 @@ def buy_the_scrolls(x, y):
     while pyautogui.locateCenterOnScreen(r"for_arduino\home_scroll.png") == None:
         print("沒有看到home_scroll，再等5秒鐘")
         time.sleep(5)
+        print("正移動到要解鎖的位置")
+        pyautogui.moveTo(*unlock_loctaion, duration=1)
+        print("正要解鎖自動狩獵模式")
+        click_through_arduino.drag_to_right()
+        exit_the_control_of_simulator()
 
     # 按商城的按鈕
     print("執行按商城的程序")
