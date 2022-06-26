@@ -1,11 +1,9 @@
-import pyautogui
+import monitor2
+import send_skype_message
+making_money_number = monitor2.check()
+with open(r"c:\data_for_python.txt", "rt", encoding="utf-8") as data:
+    txt = data.read().split()
 
-a = pyautogui.locateAllOnScreen(r"for_arduino\square.png")
-for i in a:
-    print(i)
-
-while True:
-    a = input("按enter讀位置")
-    if a == "Q":
-        break
-    print(pyautogui.position())
+number_created = int(txt[5])
+print(f'賺錢人物/所有人物:{making_money_number}/{number_created}')
+send_skype_message.send_message_string(f'賺錢人物/所有人物:{making_money_number}/{number_created}')

@@ -34,11 +34,11 @@ def check():
         cv2.rectangle(img1, (i[0], i[1]), (i[0]+i[2]+50, i[1]+i[3]), (0, 255, 0), 2)
     # 下面這行只是確認有資料
     # print(locationRecord)
-    print(f'偵測到{deviceNumber}個角色在遊戲中     monitor.py'+time_recorded.time_message())
+    #print(f'偵測到{deviceNumber}個角色在遊戲中     monitor.py'+time_recorded.time_message())
     # img1 = cv2.resize(img2, (0, 0), fx=0.75, fy=0.75)
     # cv2.imshow(f'{deviceNumber} characters detected', img1)
     # cv2.waitKey(0)
-    notDetectedNumber = 0
+    DetectedNumber = 0
     time.sleep(60)
 
     # 對螢幕截圖
@@ -49,24 +49,13 @@ def check():
     img2 = cv2.imread(r'for_detecting_no_make_money\fullscreen2.png')
 
     for j in range(deviceNumber):
-        if pyautogui.locateOnScreen(rf'for_detecting_no_make_money\picture{j+1}.png'):
+        if not (pyautogui.locateOnScreen(rf'for_detecting_no_make_money\picture{j+1}.png')):
             #print(pyautogui.locateOnScreen(rf'for_detecting_no_make_money\picture{j+1}.png'))
-            notDetectedNumber += 1
-            cv2.rectangle(img2, (locationRecord[j][0], locationRecord[j][1]), (locationRecord[j][2], locationRecord[j][3]), (0, 0, 255), 2)
+            DetectedNumber += 1
 
-    if __name__ == '__name__':    # 展示圖的部分在這個模組被引用時不展示
-        if notDetectedNumber > 0:
-            cv2.putText(img2, f'{notDetectedNumber} characters did not make money', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0,255), 2)
-            img2 = cv2.resize(img2,(0, 0), fx=0.75, fy=0.75)
-            cv2.imshow(f'{notDetectedNumber} characters did not make money', img2)
-            print(f'共有{deviceNumber}個角色監測中')
-            print(f'有{notDetectedNumber}個角色沒有正常運作')
-            cv2.waitKey(0)
-        else:
-            print(f'共有{deviceNumber}個角色監測中')
-            print("所有的角色都正常運作")
 
-    return notDetectedNumber  #check這個函式會回傳沒有在賺錢的人物
+
+    return DetectedNumber  #check這個函式會回傳沒有在賺錢的人物
 
 
 if __name__ == '__main__':
