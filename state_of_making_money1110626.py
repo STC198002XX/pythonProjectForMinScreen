@@ -13,3 +13,7 @@ def state():
         print(f'賺錢人物/所有人物:{making_money_number}/{number_created}')
         send_skype_message.send_message_string(f'賺錢人物/所有人物:{making_money_number}/{number_created}')
         time.sleep(3600)
+
+
+if __name__ == "__main__":
+    state()
