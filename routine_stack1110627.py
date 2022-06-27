@@ -1,0 +1,4 @@
+import state_of_making_money1110626
+import daily_buy_scrolls_and_sell_in_auction
+daily_buy_scrolls_and_sell_in_auction.do_all()
+state_of_making_money1110626.state()
