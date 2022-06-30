@@ -54,17 +54,17 @@ def check():
             notDetectedNumber += 1
             cv2.rectangle(img2, (locationRecord[j][0], locationRecord[j][1]), (locationRecord[j][2], locationRecord[j][3]), (0, 0, 255), 2)
 
-    if __name__ == '__name__':    # 展示圖的部分在這個模組被引用時不展示
-        if notDetectedNumber > 0:
-            cv2.putText(img2, f'{notDetectedNumber} characters did not make money', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0,255), 2)
-            img2 = cv2.resize(img2,(0, 0), fx=0.75, fy=0.75)
-            cv2.imshow(f'{notDetectedNumber} characters did not make money', img2)
-            print(f'共有{deviceNumber}個角色監測中')
-            print(f'有{notDetectedNumber}個角色沒有正常運作')
-            cv2.waitKey(0)
-        else:
-            print(f'共有{deviceNumber}個角色監測中')
-            print("所有的角色都正常運作")
+ #   if __name__ == '__name__':    # 展示圖的部分在這個模組被引用時不展示
+    if notDetectedNumber > 0:
+        cv2.putText(img2, f'{notDetectedNumber} characters did not make money', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0,255), 2)
+        img2 = cv2.resize(img2,(0, 0), fx=0.75, fy=0.75)
+        cv2.imshow(f'{notDetectedNumber} characters did not make money', img2)
+        print(f'共有{deviceNumber}個角色監測中')
+        print(f'有{notDetectedNumber}個角色沒有正常運作')
+        cv2.waitKey(0)
+    else:
+        print(f'共有{deviceNumber}個角色監測中')
+        print("所有的角色都正常運作")
 
     return notDetectedNumber  #check這個函式會回傳沒有在賺錢的人物
 
